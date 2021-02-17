@@ -23,12 +23,47 @@ public class EncapsulateTheData {
 	//2. Create a new JUnit Test case and write tests to verify that 
 	//   the member variables' getters and setters are working
 	
-	int itemsReceived; //must not be negative. All negative arguments get set to 0.
-	float degreesTurned; //must be locked between 0.0 and 360.0 inclusive.
-	String nomenclature = " "; //must not be set to a blank string. Blank Strings get set to a space
-	Object memberObj;  //must not be a String.  If it is a String, set it equal to a new Object();
+	protected int itemsReceived; //must not be negative. All negative arguments get set to 0.
+	protected float degreesTurned; //must be locked between 0.0 and 360.0 inclusive.
+	protected String nomenclature = " "; //must not be set to a blank string. Blank Strings get set to a space
+	protected Object memberObj;  //must not be a String.  If it is a String, set it equal to a new Object();
+
 	
-	public static void main(String[] args) {
-		
+	void setIR(int ir) {
+		if (ir<0) {
+			ir=0;
+	itemsReceived=ir;
+		}
 	}
+	int getIR() {
+		return this.itemsReceived;
+	}
+	void setDT(float dt) {
+		if (dt>=0&&dt<=360) {
+	degreesTurned=dt;
+		}
+	}
+	double getDT() {
+		return this.degreesTurned;
+	}
+	void setN(String n) {
+		if (n.equals("")) {
+			n=" ";
+		}
+		nomenclature=n;
+	}
+	String getN() {
+		return this.nomenclature;
+	}
+
+	void setMO(Object mo) {
+		if (mo instanceof String) {
+	mo =new Object();
+		}
+		memberObj=mo;
+	}
+	Object getMO() {
+		return this.memberObj;
+	}
+
 }
