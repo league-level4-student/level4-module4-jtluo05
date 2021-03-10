@@ -36,6 +36,7 @@ public class HospitalTest extends TestCase {
 	/* Fix asserts one at a time */
 	public void testDoctorsHaveSpecialties() throws Exception {
 		Doctor testDoctor = new Doctor();
+		//start here
 		assertEquals(false, testDoctor.performsSurgery());
 
 		Doctor testSurgeon = new Surgeon();

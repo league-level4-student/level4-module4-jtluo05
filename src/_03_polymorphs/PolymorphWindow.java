@@ -11,10 +11,11 @@ import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-public class PolymorphWindow extends JPanel implements ActionListener, MouseMotionListener {
+public class PolymorphWindow extends JPanel implements ActionListener, MouseMotionListener, MouseListener {
 	public static final int WIDTH = 900;
 	public static final int HEIGHT = 600;
 
@@ -27,6 +28,7 @@ public class PolymorphWindow extends JPanel implements ActionListener, MouseMoti
 	static Polymorph circle = new CircleMorph(25, 25);
 	static Polymorph mouse = new MouseMorph(25, 25);
 	static Polymorph image = new Image(25, 25);
+	static Polymorph jop = new JOPmorph(25, 25);
 
 	public void buildWindow() {
 		window = new JFrame("IT'S MORPHIN' TIME!");
@@ -38,6 +40,7 @@ public class PolymorphWindow extends JPanel implements ActionListener, MouseMoti
 		timer = new Timer(1000 / 30, this);
 		timer.start();
 		window.addMouseMotionListener(this);
+		window.addMouseListener(this);
 	}
 
 	public static void main(String[] args) {
@@ -50,6 +53,7 @@ public class PolymorphWindow extends JPanel implements ActionListener, MouseMoti
 		poly.add(circle);
 		poly.add(mouse);
 		poly.add(image);
+		poly.add(jop);
 	}
 
 	public void paintComponent(Graphics g) {
@@ -81,5 +85,41 @@ public class PolymorphWindow extends JPanel implements ActionListener, MouseMoti
 	public void mouseDragged(MouseEvent e) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	
+	}
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+	System.out.println(e.getX());
+	System.out.println(e.getY());
+		if (e.getX()>350&&e.getX()<450&&e.getY()>350&&e.getY()<450) {
+			JOptionPane.showMessageDialog(null, "MeSsAgE");
+		}
+	}
+	
+	
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }
