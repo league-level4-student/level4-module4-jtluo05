@@ -2,10 +2,10 @@ package _04_hospital;
 
 import java.util.ArrayList;
 
-public class Doctor extends Hospital {
+public class Doctor  {
 	boolean ps = false;
 boolean mhc=false;
-ArrayList<Patient> dp;
+ArrayList<Patient> dp=new ArrayList <Patient>();
 
 Patient patient=new Patient();
 	boolean performsSurgery() {
@@ -30,7 +30,9 @@ Patient patient=new Patient();
 		}
 
 	public void doMedicine() {
-	patient.care=true;
+	for (int i = 0; i < dp.size(); i++) {
+		dp.get(i).care=true;
+	}
 		
 	}
 

@@ -7,11 +7,10 @@ import _03_polymorphs.Polymorph;
 
 public class Hospital {
 	ArrayList<Doctor> hospital;
-	Doctor doc = new Doctor();
 	ArrayList<Patient> patient;
 	Patient p = new Patient();
 
-	void Hostital() {
+	 Hospital() {
 		hospital = new ArrayList<Doctor>();
 		patient = new ArrayList<Patient>();
 	}
