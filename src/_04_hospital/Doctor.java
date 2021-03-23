@@ -3,7 +3,6 @@ package _04_hospital;
 import java.util.ArrayList;
 
 public class Doctor extends Hospital {
-	Doctor doctor = new Doctor();
 	boolean ps = false;
 boolean mhc=false;
 ArrayList<Patient> dp;
