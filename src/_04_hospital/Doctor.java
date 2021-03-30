@@ -3,14 +3,14 @@ package _04_hospital;
 import java.util.ArrayList;
 
 public class Doctor  {
-	boolean ps = false;
+	
 boolean mhc=false;
 ArrayList<Patient> dp=new ArrayList <Patient>();
 
 Patient patient=new Patient();
 	boolean performsSurgery() {
 
-		return ps;
+		return false;
 	}
 
 	boolean  makesHouseCalls() {

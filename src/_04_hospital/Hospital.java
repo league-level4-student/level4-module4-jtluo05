@@ -10,7 +10,7 @@ public class Hospital {
 	ArrayList<Patient> patient;
 	Patient p = new Patient();
 
-	 Hospital() {
+	Hospital() {
 		hospital = new ArrayList<Doctor>();
 		patient = new ArrayList<Patient>();
 	}
@@ -33,16 +33,17 @@ public class Hospital {
 	}
 
 	public void assignPatientsToDoctors() throws DoctorFullException {
-	for (int i = 0; i < hospital.size(); i++) {
-		if (hospital.get(0).getPatients().size()<3) {
-			hospital.get(i).assignPatient(p);
+		int di=0;
+		for (int i = 0; i < patient.size(); i++) {
+			 try {
+				 hospital.get(di).assignPatient(p);
+				
+			 } catch(DoctorFullException dfe){
+				di++;
+				i--;
+			 }
 		}
-		else {
-			
-			throw new DoctorFullException();
-		}
-	}
-		
+
 	}
 
 }
